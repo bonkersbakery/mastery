@@ -2,14 +2,15 @@ import React from "react";
 import { Router, Route } from "react-router";
 import App from "../app/App";
 import Order from "../order";
+import { HashRouter } from "react-router-dom";
 
 const Routes = props => (
-  <Router {...props}>
+  <HashRouter>
     <div>
       <Route exact path="/" component={App} />
       <Route path="/order" component={Order} />
     </div>
-  </Router>
+  </HashRouter>
 );
 
 export default Routes;

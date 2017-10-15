@@ -9,19 +9,8 @@ export const TextField = ({
   label,
   meta: { touched, error },
   ...custom
-}) => (
-  <MuiTextField
-    label={label}
-    error={touched && error ? error : false}
-    {...input}
-    {...custom}
-  />
-);
+}) => <MuiTextField label={label} error={!!error} {...input} {...custom} />;
 
-export const Select = ({ input, meta: { touched, error }, ...custom }) => (
-  <MuiSelectField
-    error={touched && error ? error : false}
-    {...custom}
-    {...input}
-  />
-);
+export const Select = ({ input, meta: { touched, error }, ...custom }) => {
+  return <MuiSelectField error={!!error} {...custom} {...input} />;
+};

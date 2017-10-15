@@ -10,6 +10,23 @@ import Paper from "material-ui/Paper";
 import classNames from "classnames";
 import { FieldArray, reduxForm } from "redux-form";
 import Grid from "material-ui/Grid";
+import { fromPairs } from "lodash";
+
+const validate = values => {
+  const requiredFields = ["cupCakeSize", "cakeFlavor", "icing", "quantity"];
+  const errors = {};
+  const cupcakeErrors = [];
+  values.cupcakes.forEach((cupcake, cupcakeIdx) => {
+    const errorPairs = requiredFields
+      .filter(field => !cupcake[field])
+      .map(f => [f, "Required"]);
+
+    cupcakeErrors[cupcakeIdx] = fromPairs(errorPairs);
+  });
+
+  errors.cupcakes = cupcakeErrors;
+  return errors;
+};
 
 export const renderCupCakes = ({
   fields,
@@ -97,6 +114,7 @@ const CakeFormFieldArray = ({
 export default withStyles(styles)(
   reduxForm({
     form: "CakeFormFieldArrayForm",
+    validate,
     initialValues: {
       cupcakes: [{}]
     }

@@ -6,10 +6,6 @@ import { FormControl } from "material-ui/Form";
 import { InputLabel } from "material-ui/Input";
 import { withStyles } from "material-ui/styles";
 
-const validate = values => {
-  console.log(values);
-};
-
 const styles = theme => ({
   formControl: {
     margin: theme.spacing.unit,
@@ -146,9 +142,4 @@ const CakeFormContainer = ({ classes, cake = "cake" }) => (
   </div>
 );
 
-export default withStyles(styles)(
-  reduxForm({
-    form: "CakeFormContainerForm",
-    validate
-  })(CakeFormContainer)
-);
+export default withStyles(styles)(CakeFormContainer);
