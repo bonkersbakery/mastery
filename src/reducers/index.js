@@ -1,5 +1,8 @@
 import { combineReducers } from "redux";
+import { reducer as reduxFormReducer } from "redux-form";
 
-const cupcakeConspiracy = combineReducers({});
+const rootReducer = combineReducers({
+  form: reduxFormReducer
+});
 
-export default cupcakeConspiracy;
+export default rootReducer;
