@@ -6,6 +6,10 @@ import Typography from "material-ui/Typography";
 import Grid from "material-ui/Grid";
 import imgHeader from "../images/CupCakeFixed.png";
 import ImageGallery from "./ImageGallery";
+import TextField from "material-ui/TextField";
+import Divider from "material-ui/Divider";
+import Icon from "material-ui/Icon";
+import Button from "material-ui/Button";
 
 const styles = theme => ({
   flexCenter: {
@@ -15,6 +19,14 @@ const styles = theme => ({
     flexWrap: "wrap",
     paddingTop: 16,
     paddingBottom: 16
+  },
+  formContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    flexDirection: "column"
+  },
+  textField: {
+    minWidth: 500
   },
   gridContainer: {
     paddingTop: 16,
@@ -116,15 +128,93 @@ const App = ({ classes }) => (
         </Typography>
       </Paper>
     </div>
-    <div>
-      <Paper elevation={5}>
-        <div className={classes.description}>
-          <Typography type="headline" component="h3">
-            Contact Us
-          </Typography>
-        </div>
+    <div className={classes.flexCenter}>
+      <Paper className={classes.content} elevation={2}>
+        <Typography type="headline" component="h3">
+          Sign up for VIP Innocence Rewards!
+        </Typography>
+        <Typography type="body1" component="p">
+          And keep your eyes peeled as our special projects private investigator
+          will have updates regularly.
+        </Typography>
+      </Paper>
+      <Paper className={classes.content}>
+        <form noValidate className={classes.formContainer} autoComplete="off">
+          <TextField
+            id="name"
+            label="Name"
+            margin="normal"
+            className={classes.textField}
+          />
+          <TextField
+            id="lastName"
+            label="Last Name"
+            margin="normal"
+            className={classes.textField}
+          />
+          <TextField
+            id="phone"
+            label="Phone Number"
+            margin="normal"
+            className={classes.textField}
+          />
+          <TextField id="email" label="Email" margin="normal" />
+          <Button raised color="accent">
+            Submit
+          </Button>
+        </form>
       </Paper>
     </div>
+    <Grid container justify={"center"}>
+      <Grid item md={3} xs={12}>
+        <Paper className={classes.content} elevation={5}>
+          <Typography type="headline" component="h2">
+            Contact Us
+          </Typography>
+          <Divider />
+          <br />
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Icon color="primary" style={{ fontSize: 30 }}>
+              contact_phone
+            </Icon>
+            <Typography type="subheading" component="p">
+              &nbsp; 306-374-5401
+            </Typography>
+          </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Icon color="primary" style={{ fontSize: 30 }}>
+              email
+            </Icon>
+            <Typography type="subheading" component="p">
+              &nbsp;{" "}
+              <a href="mailto:cupcakes@thecupcakeconspiracy.ca">
+                cupcakes@thecupcakeconspiracy.ca
+              </a>
+            </Typography>
+          </div>
+          <br />
+        </Paper>
+      </Grid>
+      <Grid item md={6} xs={12}>
+        <Paper className={classes.content} elevation={10}>
+          <Typography type="headline" component="h3">
+            Interested in working at Cupcake Conspiracy?
+          </Typography>
+          <Typography type="body1" component="p">
+            We are currently looking for a part time baker focused on our new
+            product lines. Morning shifts start between 7 and 8am. Kitchen
+            management skills would be preferred. The position could become full
+            time for the right candidate.
+            <br />
+            <br />
+            Please send resumes to &nbsp;
+            <a href="mailto:cupcakes@thecupcakeconspiracy.ca">
+              cupcakes@thecupcakeconspiracy.ca
+            </a>
+          </Typography>
+        </Paper>
+      </Grid>
+    </Grid>
   </div>
 );
 
