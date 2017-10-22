@@ -12,17 +12,17 @@ const styles = theme => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
+    paddingTop: 16,
+    paddingBottom: 16
   },
   gridContainer: {
     paddingTop: 16,
+    paddingBottom: 16,
     display: "grid",
     gridColumnGap: "20px",
     alignItem: "center",
     minHeight: 200
-  },
-  descrptionContainer: {
-    gridTemplateColumns: "1fr 1fr"
   },
   header: {
     height: 600,
@@ -33,7 +33,8 @@ const styles = theme => ({
     alignItems: "center"
   },
   description: {
-    margin: 20
+    margin: 20,
+    minHeight: 150
   },
   content: theme.mixins.gutters({
     paddingTop: 16,
@@ -80,26 +81,28 @@ const App = ({ classes }) => (
         <ImageGallery />
       </Paper>
     </div>
-    <div className={`${classes.gridContainer} ${classes.descrptionContainer}`}>
-      <Paper elevation={5}>
-        <div className={classes.description}>
-          <Typography type="headline" component="h3">
-            So you want some gluten-free cupcakes?
-          </Typography>
-          <Typography type="body1" component="p">
-            Then you're damn lucky, because our cupcakes are gluten-free,
-            sugar-free, tax-free, sketchy-shit-stuff-that-might-kill-you-free
-          </Typography>
-        </div>
-      </Paper>
-      <Paper elevation={5}>
-        <div className={classes.description}>
+    <Grid container justify={"center"}>
+      <Grid item md={6} xs={12}>
+        <Paper className={classes.content} elevation={2}>
           <Typography type="headline" component="h3">
             Yeah doug we make cupcakes
           </Typography>
-        </div>
-      </Paper>
-    </div>
+          <Typography type="body1" component="p">
+            Ya'll cravin for a cupcake? We got you ass covered
+          </Typography>
+        </Paper>
+      </Grid>
+      <Grid item md={3} xs={12}>
+        <Paper className={classes.content} elevation={2}>
+          <Typography type="headline" component="h3">
+            Yeah doug we make cupcakes
+          </Typography>
+          <Typography type="body1" component="p">
+            Ya'll cravin for a cupcake? We got you ass covered
+          </Typography>
+        </Paper>
+      </Grid>
+    </Grid>
     <div className={classes.flexCenter}>
       <Paper className={classes.content} elevation={2}>
         <ImageGallery />
@@ -113,22 +116,11 @@ const App = ({ classes }) => (
         </Typography>
       </Paper>
     </div>
-    <div className={classes.gridContainer}>
+    <div>
       <Paper elevation={5}>
         <div className={classes.description}>
           <Typography type="headline" component="h3">
-            So you want some gluten-free cupcakes?
-          </Typography>
-          <Typography type="body1" component="p">
-            Then you're damn lucky, because our cupcakes are gluten-free,
-            sugar-free, tax-free, sketchy-shit-stuff-that-might-kill-you-free
-          </Typography>
-        </div>
-      </Paper>
-      <Paper elevation={5}>
-        <div className={classes.description}>
-          <Typography type="headline" component="h3">
-            Yeah doug we make cupcakes
+            Contact Us
           </Typography>
         </div>
       </Paper>
