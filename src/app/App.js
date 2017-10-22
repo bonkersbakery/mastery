@@ -10,6 +10,7 @@ import TextField from "material-ui/TextField";
 import Divider from "material-ui/Divider";
 import Icon from "material-ui/Icon";
 import Button from "material-ui/Button";
+import Sticky from "react-stickynode";
 
 const styles = theme => ({
   flexCenter: {
@@ -19,6 +20,10 @@ const styles = theme => ({
     flexWrap: "wrap",
     paddingTop: 16,
     paddingBottom: 16
+  },
+  stickyContainer: {
+    position: "sticky",
+    top: "-100px"
   },
   formContainer: {
     display: "flex",
@@ -62,37 +67,40 @@ const App = ({ classes }) => (
         <img alt="header" src={imgHeader} />
       </div>
     </Paper>
-    <div className={classes.flexCenter}>
-      <div>
+    <Sticky enabled={true} top={50} bottomBoundary=".contents-stuff">
+      <div className={`${classes.flexCenter}`}>
+        <div>
+          <Paper className={classes.content} elevation={2}>
+            <Typography type="headline" component="h3">
+              Yeah doug we make cupcakes
+            </Typography>
+            <Typography type="body1" component="p">
+              Ya'll cravin for a cupcake? We got you ass covered
+            </Typography>
+          </Paper>
+          <Paper className={classes.content} elevation={2}>
+            <Typography type="headline" component="h3">
+              Yeah doug we make cupcakes
+            </Typography>
+            <Typography type="body1" component="p">
+              Ya'll cravin for a cupcake? We got you ass covered
+            </Typography>
+          </Paper>
+          <Paper className={classes.content} elevation={2}>
+            <Typography type="headline" component="h3">
+              Yeah doug we make cupcakes
+            </Typography>
+            <Typography type="body1" component="p">
+              Ya'll cravin for a cupcake? We got you ass covered
+            </Typography>
+          </Paper>
+        </div>
         <Paper className={classes.content} elevation={2}>
-          <Typography type="headline" component="h3">
-            Yeah doug we make cupcakes
-          </Typography>
-          <Typography type="body1" component="p">
-            Ya'll cravin for a cupcake? We got you ass covered
-          </Typography>
-        </Paper>
-        <Paper className={classes.content} elevation={2}>
-          <Typography type="headline" component="h3">
-            Yeah doug we make cupcakes
-          </Typography>
-          <Typography type="body1" component="p">
-            Ya'll cravin for a cupcake? We got you ass covered
-          </Typography>
-        </Paper>
-        <Paper className={classes.content} elevation={2}>
-          <Typography type="headline" component="h3">
-            Yeah doug we make cupcakes
-          </Typography>
-          <Typography type="body1" component="p">
-            Ya'll cravin for a cupcake? We got you ass covered
-          </Typography>
+          <ImageGallery />
         </Paper>
       </div>
-      <Paper className={classes.content} elevation={2}>
-        <ImageGallery />
-      </Paper>
-    </div>
+    </Sticky>
+    <div className={"contents-stuff"} style={{ minHeight: 500 }} />
     <Grid container justify={"center"}>
       <Grid item md={6} xs={12}>
         <Paper className={classes.content} elevation={2}>
