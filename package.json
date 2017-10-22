@@ -2,7 +2,7 @@
   "name": "cupcake_conspiracy",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dooven.github.io/cupcake_conspiracy",
+  "homepage": "https://cupcakeconspiracy.github.io",
   "dependencies": {
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
