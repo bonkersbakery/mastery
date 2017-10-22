@@ -31,7 +31,7 @@ const styles = theme => ({
     flexDirection: "column"
   },
   textField: {
-    minWidth: 500
+    maxWidth: 500
   },
   gridContainer: {
     paddingTop: 16,
@@ -136,43 +136,47 @@ const App = ({ classes }) => (
         </Typography>
       </Paper>
     </div>
-    <div className={classes.flexCenter}>
-      <Paper className={classes.content} elevation={2}>
-        <Typography type="headline" component="h3">
-          Sign up for VIP Innocence Rewards!
-        </Typography>
-        <Typography type="body1" component="p">
-          And keep your eyes peeled as our special projects private investigator
-          will have updates regularly.
-        </Typography>
-      </Paper>
-      <Paper className={classes.content}>
-        <form noValidate className={classes.formContainer} autoComplete="off">
-          <TextField
-            id="name"
-            label="Name"
-            margin="normal"
-            className={classes.textField}
-          />
-          <TextField
-            id="lastName"
-            label="Last Name"
-            margin="normal"
-            className={classes.textField}
-          />
-          <TextField
-            id="phone"
-            label="Phone Number"
-            margin="normal"
-            className={classes.textField}
-          />
-          <TextField id="email" label="Email" margin="normal" />
-          <Button raised color="accent">
-            Submit
-          </Button>
-        </form>
-      </Paper>
-    </div>
+    <Grid container justify={"center"}>
+      <Grid item xs={6} md={3}>
+        <Paper className={classes.content} elevation={2}>
+          <Typography type="headline" component="h3">
+            Sign up for VIP Innocence Rewards!
+          </Typography>
+          <Typography type="body1" component="p">
+            And keep your eyes peeled as our special projects private
+            investigator will have updates regularly.
+          </Typography>
+        </Paper>
+      </Grid>
+      <Grid item xs={12} md={7}>
+        <Paper className={classes.content}>
+          <form noValidate className={classes.formContainer} autoComplete="off">
+            <TextField
+              id="name"
+              label="Name"
+              margin="normal"
+              className={classes.textField}
+            />
+            <TextField
+              id="lastName"
+              label="Last Name"
+              margin="normal"
+              className={classes.textField}
+            />
+            <TextField
+              id="phone"
+              label="Phone Number"
+              margin="normal"
+              className={classes.textField}
+            />
+            <TextField id="email" label="Email" margin="normal" />
+            <Button raised color="accent">
+              Submit
+            </Button>
+          </form>
+        </Paper>
+      </Grid>
+    </Grid>
     <Grid container justify={"center"}>
       <Grid item md={3} xs={12}>
         <Paper className={classes.content} elevation={5}>
