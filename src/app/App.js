@@ -75,7 +75,7 @@ const App = ({ classes }) => (
               Yeah doug we make cupcakes
             </Typography>
             <Typography type="body1" component="p">
-              Ya'll cravin for a cupcake? We got you ass covered
+              {/* Ya'll cravin for a cupcake? We got you ass covered */}
             </Typography>
           </Paper>
           <Paper className={classes.content} elevation={2}>
@@ -83,7 +83,7 @@ const App = ({ classes }) => (
               Yeah doug we make cupcakes
             </Typography>
             <Typography type="body1" component="p">
-              Ya'll cravin for a cupcake? We got you ass covered
+              {/* Ya'll cravin for a cupcake? We got you ass covered */}
             </Typography>
           </Paper>
           <Paper className={classes.content} elevation={2}>
@@ -91,7 +91,7 @@ const App = ({ classes }) => (
               Yeah doug we make cupcakes
             </Typography>
             <Typography type="body1" component="p">
-              Ya'll cravin for a cupcake? We got you ass covered
+              {/* Ya'll cravin for a cupcake? We got you ass covered */}
             </Typography>
           </Paper>
         </div>
@@ -108,7 +108,7 @@ const App = ({ classes }) => (
             Yeah doug we make cupcakes
           </Typography>
           <Typography type="body1" component="p">
-            Ya'll cravin for a cupcake? We got you ass covered
+            {/* Ya'll cravin for a cupcake? We got you ass covered */}
           </Typography>
         </Paper>
       </Grid>
@@ -118,7 +118,7 @@ const App = ({ classes }) => (
             Yeah doug we make cupcakes
           </Typography>
           <Typography type="body1" component="p">
-            Ya'll cravin for a cupcake? We got you ass covered
+            {/* Ya'll cravin for a cupcake? We got you ass covered */}
           </Typography>
         </Paper>
       </Grid>
@@ -132,7 +132,7 @@ const App = ({ classes }) => (
           Yeah doug we make cupcakes
         </Typography>
         <Typography type="body1" component="p">
-          Ya'll cravin for a cupcake? We got you ass covered
+          {/* Ya'll cravin for a cupcake? We got you ass covered */}
         </Typography>
       </Paper>
     </div>
@@ -148,7 +148,7 @@ const App = ({ classes }) => (
           </Typography>
         </Paper>
       </Grid>
-      <Grid item xs={12} md={7}>
+      <Grid item xs={12} md={5}>
         <Paper className={classes.content}>
           <form noValidate className={classes.formContainer} autoComplete="off">
             <TextField
