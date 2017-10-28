@@ -1,9 +1,16 @@
 import React from "react";
-import Grid from "material-ui/Grid"
+import Header from "./Header";
+import { StyleRoot } from "radium";
+import Carousel from "./Carousel";
 
 class App extends React.Component {
   render() {
-    return "Sample";
+    return (
+      <StyleRoot>
+        <Header />
+        <Carousel />
+      </StyleRoot>
+    );
   }
 }
 
