@@ -3,11 +3,13 @@ import { Carousel } from "react-responsive-carousel";
 import mediaQuery from "../common/mediaquery";
 import Radium from "radium";
 import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
+import text from "../common/text";
 import Responsive from "react-responsive";
+import Typography from "material-ui/Typography";
 
-const Desktop = props => <Responsive {...props} minWidth={992} />;
-const Tablet = props => <Responsive {...props} maxWidth={991} />;
-// const Mobile = props => <Responsive {...props} maxWidth={767} />;
+// const Desktop = props => <Responsive {...props} minWidth={992} />;
+const Tablet = props => <Responsive {...props} minWidth={768} />;
+const Mobile = props => <Responsive {...props} maxWidth={767} />;
 // const Default = props => <Responsive {...props} minWidth={768} />;
 
 const style = {
@@ -19,8 +21,8 @@ const style = {
   container: {
     display: "flex",
     marginLeft: "auto",
+    paddingTop: "50px",
     marginRight: "auto",
-    marginTop: "50px",
     marginBottom: "50px",
     width: "90%",
     position: "sticky",
@@ -28,15 +30,16 @@ const style = {
     [mediaQuery.breakpointSmall]: {
       flexWrap: "wrap",
       flexDirection: "row"
-    }
+    },
+    justifyContent: "space-around"
   },
   imageStyle: {
-    margin: "auto",
     [mediaQuery.breakpointSmall]: {
       position: "static",
       top: "auto",
       display: "block"
-    }
+    },
+    width: "60%"
   }
 };
 const images = [1, 2, 3, 4, 5].map(id => (
@@ -45,40 +48,48 @@ const images = [1, 2, 3, 4, 5].map(id => (
   </div>
 ));
 
-const text =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec erat aliquet, condimentum lectus at, suscipit nulla. Praesent luctus, purus nec rutrum mollis, tortor lorem sollicitudin urna, et tincidunt nibh risus vitae metus. Ut facilisis lacus sit amet dui lobortis placerat. Morbi sodales malesuada felis vitae mollis. Suspendisse vulputate nisl lectus, ac varius velit condimentum condimentum. Curabitur eget tempus metus, vel luctus nunc. Praesent a leo at lectus mollis ullamcorper in ";
 class CarouselContainer extends React.Component {
   render() {
     return (
-      <div>
-        <Desktop>
+      <div
+        style={{
+          backgroundColor: "#f7f7f8",
+          padding: 0,
+          margin: 0
+        }}
+      >
+        <Tablet>
           <div style={style.float}>
             <div style={style.container}>
               <div style={style.imageStyle}>
-                <Carousel axis="vertical" showArrows={true}>
-                  {images}
-                </Carousel>
+                <div style={{ margin: "auto" }}>
+                  <Carousel axis="horizontal" showArrows={true}>
+                    {images}
+                  </Carousel>
+                </div>
               </div>
               <div style={{ width: "40%", padding: "20px", fontSize: "1.2em" }}>
-                {text}
+                <Typography type="body1">{text}</Typography>
               </div>
               <div style={{ width: "40%", padding: "20px", fontSize: "1.2em" }}>
-                {text}
+                <Typography type="body1">{text}</Typography>
               </div>
             </div>
           </div>
-        </Desktop>
-        <Tablet>
-          <div
-            style={{ ...style.imageStyle, width: "80%", paddingTop: "50px" }}
-          >
-            <Carousel axis="vertical" showArrows={true}>
+        </Tablet>
+        <Mobile>
+          <div style={{ ...style.imageStyle, width: "100%" }}>
+            <Carousel axis="horizontal" showArrows={true}>
               {images}
             </Carousel>
           </div>
-          <div style={{ margin: "50px", fontSize: "1.2em" }}>{text}</div>
-          <div style={{ margin: "50px", fontSize: "1.2em" }}>{text}</div>
-        </Tablet>
+          <div style={{ margin: "50px", fontSize: "1.2em" }}>
+            <Typography type="body1">{text}</Typography>
+          </div>
+          <div style={{ margin: "50px", fontSize: "1.2em" }}>
+            <Typography type="body1">{text}</Typography>
+          </div>
+        </Mobile>
       </div>
     );
   }

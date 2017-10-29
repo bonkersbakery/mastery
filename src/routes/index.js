@@ -3,6 +3,7 @@ import { Router, Route } from "react-router";
 import App from "../app/App";
 import Order from "../order";
 import { HashRouter } from "react-router-dom";
+import "typeface-roboto";
 
 const Routes = props => (
   <HashRouter>

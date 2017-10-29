@@ -1,9 +1,11 @@
 import React from "react";
 import Radium from "radium";
+import Typography from "material-ui/Typography";
+import text from "../common/text";
 
 const style = {
   container: {
-    backgroundColor: "black",
+    backgroundColor: "white",
     height: "300px"
   },
   wrapper: {
@@ -19,7 +21,10 @@ class Promotion extends React.Component {
     return (
       <div style={style.container}>
         <div style={style.wrapper}>
-          <h2>Promotion here</h2>
+          <Typography type="display2" gutterBottom>
+            Promotion here
+          </Typography>
+          <Typography type="body1">{text}</Typography>
         </div>
       </div>
     );

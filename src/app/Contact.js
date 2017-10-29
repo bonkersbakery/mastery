@@ -13,4 +13,4 @@ class Contact extends React.Component {
   }
 }
 
-export default Radium(Contact);
+export default Radium(Contact);   
