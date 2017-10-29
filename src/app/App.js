@@ -1,10 +1,5 @@
 import React from "react";
-import Header from "./Header";
-import { StyleRoot } from "radium";
-import Carousel from "./Carousel";
-import Promotion from "./Promotion";
 import IconButton from "material-ui/IconButton";
-import Contact from "./Contact";
 import MenuIcon from "material-ui-icons/Menu";
 import Drawer from "material-ui/Drawer";
 import List, { ListItem, ListItemText, ListItemIcon } from "material-ui/List";
@@ -13,6 +8,7 @@ import People from "material-ui-icons/People";
 import ShoppingCart from "material-ui-icons/ShoppingCart";
 import AccountBalance from "material-ui-icons/AccountBalance";
 import Button from "material-ui/Button";
+import { Link } from "react-router-dom";
 
 const styles = {
   list: {
@@ -57,7 +53,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <StyleRoot>
+      <div>
         <div style={styles.navigation}>
           <IconButton
             onClick={this.handleDrawerOpen}
@@ -81,7 +77,7 @@ class App extends React.Component {
             </List>
             <Divider />
             <List>
-              <ListItem button>
+              <ListItem button to={`/order`} component={Link}>
                 <ListItemIcon>
                   <ShoppingCart />
                 </ListItemIcon>
@@ -97,7 +93,7 @@ class App extends React.Component {
               </ListItem>
             </List>
             <List>
-              <ListItem button>
+              <ListItem button to={`/about-us`} component={Link}>
                 <ListItemIcon>
                   <People />
                 </ListItemIcon>
@@ -106,11 +102,7 @@ class App extends React.Component {
             </List>
           </div>
         </Drawer>
-        <Header />
-        <Carousel />
-        <Promotion />
-        <Contact />
-      </StyleRoot>
+      </div>
     );
   }
 }
