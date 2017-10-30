@@ -15,7 +15,7 @@ const Mobile = props => <Responsive {...props} maxWidth={767} />;
 const style = {
   float: {
     [mediaQuery.breakpointLarge]: {
-      height: "1500px"
+      height: "110%"
     }
   },
   container: {
@@ -23,7 +23,6 @@ const style = {
     marginLeft: "auto",
     paddingTop: "50px",
     marginRight: "auto",
-    marginBottom: "50px",
     width: "90%",
     position: "sticky",
     top: "50px",
@@ -68,11 +67,28 @@ class CarouselContainer extends React.Component {
                   </Carousel>
                 </div>
               </div>
-              <div style={{ width: "40%", padding: "20px", fontSize: "1.2em" }}>
-                <Typography type="body1">{text}</Typography>
+              <div
+                style={{
+                  width: "40%",
+                  padding: "20px",
+                  display: "flex",
+                  margin: "auto"
+                }}
+              >
+                <Typography type="body1" style={{ fontSize: "1.2em" }}>
+                  {text}
+                </Typography>
               </div>
-              <div style={{ width: "40%", padding: "20px", fontSize: "1.2em" }}>
-                <Typography type="body1">{text}</Typography>
+              <div
+                style={{
+                  width: "40%",
+                  padding: "20px",
+                  margin: "auto"
+                }}
+              >
+                <Typography type="body1" style={{ fontSize: "1.2em" }}>
+                  {text}
+                </Typography>
               </div>
             </div>
           </div>

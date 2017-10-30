@@ -8,30 +8,47 @@ const style = {
     justify: "center"
   },
   logoContainer: {
-    height: "500px",
     display: "grid",
     alignItems: "center",
     justifyItems: "center",
     position: "sticky",
-    top: "100px"
+    backgroundColor: "black",
+    [mediaQuery.breakpointSmall]: {
+      height: "500px"
+    },
+    [mediaQuery.breakpointLarge]: {
+      top: "100px",
+      marginTop: "-600px",
+      backgroundImage: "none",
+      backgroundColor: "transparent"
+    },
+    zIndex: 50
   },
   logoWrapper: {
     [mediaQuery.breakpointLarge]: {
-      height: "1500px"
+      height: "1300px",
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat"
     },
-    backgroundColor: "black"
+    [mediaQuery.breakpointSmall]: {
+      display: "block"
+    },
+    opacity: "0.3",
+    backgroundColor: "black",
+    backgroundImage: "url(images/HeaderBackground.jpg)"
   }
 };
 
 class Header extends React.Component {
   render() {
     return (
-      <div style={style.logoWrapper}>
+      <div>
         <div style={style.logoContainer}>
           <div {...style.logoHolder}>
             <img src={`images/CupCakeFixed.png`} />
           </div>
         </div>
+        <div style={style.logoWrapper} />
       </div>
     );
   }

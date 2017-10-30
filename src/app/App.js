@@ -7,6 +7,7 @@ import Divider from "material-ui/Divider";
 import People from "material-ui-icons/People";
 import ShoppingCart from "material-ui-icons/ShoppingCart";
 import AccountBalance from "material-ui-icons/AccountBalance";
+import Home from "material-ui-icons/Home";
 import Button from "material-ui/Button";
 import { Link } from "react-router-dom";
 
@@ -76,6 +77,14 @@ class App extends React.Component {
               </ListItem>
             </List>
             <Divider />
+            <List>
+              <ListItem button to={`/`} component={Link}>
+                <ListItemIcon>
+                  <Home />
+                </ListItemIcon>
+                <ListItemText inset primary="Home" />
+              </ListItem>
+            </List>
             <List>
               <ListItem button to={`/order`} component={Link}>
                 <ListItemIcon>

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 import { StyleRoot } from "radium";
 import App from "../app/App";
@@ -10,7 +10,7 @@ import "typeface-roboto";
 
 const Routes = props => (
   <StyleRoot>
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div>
         <App />
         <Route exact path="/" component={Home} />
