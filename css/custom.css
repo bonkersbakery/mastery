@@ -23,7 +23,7 @@
 .phone {
   position: relative;
   max-width: 80%;
-  margin: 3rem auto -12rem;
+  margin: 3rem auto  -12rem;
 }
 .phone + .phone {
   display: none;
@@ -46,7 +46,7 @@
   margin-bottom: 0.3rem;
 }
 .value-description {
-  opacity: 0.8;
+  font-size: 1.2em;
   font-weight: 300;
 }
 
@@ -66,6 +66,10 @@
 }
 .categories .section-description {
   margin-bottom: 4rem;
+}
+
+.contact {
+  margin-top: 50px;
 }
 
 /* Bigger than 550 */
