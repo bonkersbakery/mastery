@@ -119,6 +119,9 @@
     <div class="container">
       <h3 class="section-heading">Contact Us</h3>
       <form id="myForm">
+        <div class="loading hidden">
+          <h2>Loading</h2>
+        </div>
         <div class="success hidden">
           Your message is successfully submitted
         </div>
@@ -200,10 +203,10 @@
   function submit(e) {
     e.preventDefault();
     var myHeaders = new Headers();
-    // querySelector(".loading").classList.remove("hidden");
-    // setTimeout(() => {
-    //   querySelector(".loading").classList.add("hidden");
-    // }, 1000)
+    querySelector(".loading").classList.remove("hidden");
+    setTimeout(() => {
+      querySelector(".loading").classList.add("hidden");
+    }, 1000)
     var url = "https://script.google.com/macros/s/AKfycbxcnMjn3_qZSj0L2oNmpH_MuXgPBFzSpYE6GTs0Cdh9wQcaAfg/exec?action=post";
     fetch(url, {
       method: 'POST',
