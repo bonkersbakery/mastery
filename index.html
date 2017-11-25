@@ -118,14 +118,16 @@
   <div class="section" id="contact">
     <div class="container">
       <h3 class="section-heading">Contact Us</h3>
-      <form>
+      <form id="myForm">
         <div class="row" style="text-align: left;">
           <div class="six columns">
-            <label for="emailInput">Your email</label>
-            <input class="u-full-width" type="email" id="emailInput">
-            <label for="exampleMessage">Message</label>
-            <textarea class="u-full-width" id="exampleMessage"></textarea>
-            <input class="button" type="submit" value="Submit">
+            <form>
+              <label for="email">Your email</label>
+              <input class="u-full-width" type="email" name="email" id="email">
+              <label for="message">Message</label>
+              <textarea class="u-full-width" id="message"  name="message"></textarea>
+              <input class="button" type="submit" value="Submit">
+            </form>
           </div>
           <div class="six columns">
             <div style="padding-top: 10px">
@@ -188,6 +190,35 @@
       x.className = "topnav";
     }
   }
+
+  const querySelector = selector => document.querySelector(selector);
+  const form = querySelector('form'); 
+
+  function submit(e) {
+    e.preventDefault();
+    var myHeaders = new Headers();
+    // querySelector(".loading").classList.remove("hidden");
+    // setTimeout(() => {
+    //   querySelector(".loading").classList.add("hidden");
+    // }, 1000)
+    var url = "https://script.google.com/macros/s/AKfycbxcnMjn3_qZSj0L2oNmpH_MuXgPBFzSpYE6GTs0Cdh9wQcaAfg/exec?action=post";
+    fetch(url, {
+      method: 'POST',
+      headers: myHeaders,
+      mode: 'no-cors',
+      cache: 'default',
+      body: new FormData(form)
+    }).then(() => {
+      // querySelector('form').reset();
+      // querySelector(".success").classList.remove('hidden');
+      // setTimeout(() => {
+      //   querySelector(".success").classList.add('hidden');
+      // }, 10000);
+      alert('Success!')
+      form.reset();
+    })
+  }
+  querySelector("#myForm").addEventListener("submit", submit);
 </script>
 
 </html>
