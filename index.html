@@ -119,13 +119,16 @@
     <div class="container">
       <h3 class="section-heading">Contact Us</h3>
       <form id="myForm">
+        <div class="success hidden">
+          Your message is successfully submitted
+        </div>
         <div class="row" style="text-align: left;">
           <div class="six columns">
             <form>
               <label for="email">Your email</label>
               <input class="u-full-width" type="email" name="email" id="email">
               <label for="message">Message</label>
-              <textarea class="u-full-width" id="message"  name="message"></textarea>
+              <textarea class="u-full-width" id="message" name="message"></textarea>
               <input class="button" type="submit" value="Submit">
             </form>
           </div>
@@ -192,7 +195,7 @@
   }
 
   const querySelector = selector => document.querySelector(selector);
-  const form = querySelector('form'); 
+  const form = querySelector('form');
 
   function submit(e) {
     e.preventDefault();
@@ -209,12 +212,10 @@
       cache: 'default',
       body: new FormData(form)
     }).then(() => {
-      // querySelector('form').reset();
-      // querySelector(".success").classList.remove('hidden');
-      // setTimeout(() => {
-      //   querySelector(".success").classList.add('hidden');
-      // }, 10000);
-      alert('Success!')
+      querySelector(".success").classList.remove('hidden');
+      setTimeout(() => {
+        querySelector(".success").classList.add('hidden');
+      }, 5000);
       form.reset();
     })
   }

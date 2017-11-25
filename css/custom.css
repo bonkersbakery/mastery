@@ -231,3 +231,13 @@
     position: relative;
   }
 }
+
+
+.success {
+  background: rgb(65, 192, 65);
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
