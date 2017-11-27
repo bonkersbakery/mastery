@@ -75,8 +75,6 @@
 .item {
   width: 250px;
 }
-
-
 /* Bigger than 550 */
 @media (min-width: 550px) {
   .section {
@@ -108,7 +106,7 @@
 
   .item {
     width: 500px;
-  }
+   }
 }
 
 /* Bigger than 750 */
@@ -262,3 +260,4 @@
 
 .hidden {
   display: none;
+}
