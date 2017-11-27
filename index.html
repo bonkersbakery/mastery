@@ -24,10 +24,11 @@
   <link rel="stylesheet" href="./dist/css/skeleton.css">
   <link rel="stylesheet" href="css/custom.css">
   <link rel="stylesheet" href="css/slider.css">
-
+  <link rel="stylesheet" href="/dist/css/owl.carousel.css"> 
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/dist/js/owl.carousel.min.js"></script>
 </head>
 
 <body>
@@ -102,18 +103,14 @@
     </div>
   </div>
 
-  <div class="section categories">
-    <div class="container">
-      <div class="one-half column category">
-        <img class="u-max-full-width" src="images/placeholder.png">
-      </div>
-      <div class="one-half column category">
-        <img class="u-max-full-width" src="images/placeholder.png">
-      </div>
+  <div>
+	<div class="owl-carousel">
+        <div class="item"><img src="./dist/images/carousel1.jpg"></div>
+        <div class="item"><img src="./dist/images/carousel2.jpg"></div>
+        <div class="item"><img src="./dist/images/carousel4.jpg"></div>
+        <div class="item"><img src="./dist/images/carousel5.jpg"></div>
     </div>
   </div>
-  </div>
-
 
   <div class="section" id="contact">
     <div class="container">
@@ -188,6 +185,13 @@
 </body>
 
 <script>
+  $('.owl-carousel').owlCarousel({
+	margin:10,
+	autoWidth:true,
+	items:4,
+    loop: true,
+  });
+
   function myFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {

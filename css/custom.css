@@ -72,6 +72,11 @@
   margin-top: 50px;
 }
 
+.item {
+  width: 250px;
+}
+
+
 /* Bigger than 550 */
 @media (min-width: 550px) {
   .section {
@@ -99,6 +104,10 @@
   }
   .hero-heading {
     font-size: 2.4rem;
+  }
+
+  .item {
+    width: 500px;
   }
 }
 
@@ -253,4 +262,3 @@
 
 .hidden {
   display: none;
-}
