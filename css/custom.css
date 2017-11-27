@@ -73,7 +73,7 @@
 }
 
 .item {
-  width: 250px;
+  width: 100%;
 }
 /* Bigger than 550 */
 @media (min-width: 550px) {
