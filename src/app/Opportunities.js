@@ -18,7 +18,7 @@ class Opportunities extends React.Component {
       <div style={style.container}>
         <div style={{width: "50%"}}>
           <Typography type="display1" component="h3">
-            Interested in working at Cupcake Conspiracy?
+            Interested in working at Kitchen Conspiracy?
           </Typography>
           <br />
           <br />
@@ -30,8 +30,8 @@ class Opportunities extends React.Component {
             <br />
             <br />
             Please send resumes to &nbsp;
-            <a href="mailto:cupcakes@thecupcakeconspiracy.ca">
-              cupcakes@thecupcakeconspiracy.ca
+            <a href="mailto:info@kitchenconspiracy.ca">
+              info@kitchenconspiracy.ca
             </a>
           </Typography>
         </div>
