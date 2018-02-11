@@ -73,7 +73,7 @@ class App extends React.Component {
           <div role="button" style={styles.listFull}>
             <List>
               <ListItem>
-                <ListItemText inset primary="Cupcake Conspiracy" />
+                <ListItemText inset primary="It's a Kitchen Conspiracy" />
               </ListItem>
             </List>
             <Divider />
