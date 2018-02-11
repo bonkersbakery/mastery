@@ -25,7 +25,7 @@ class Promotion extends React.Component {
           }}
         >
           <div style={style.wrapper}>
-            <Typography type="display2">Promotion here</Typography>
+            <Typography type="display2">VIP Innocence</Typography>
             <Typography type="body1" style={{ fontSize: "1.2em" }}>
               {text}
             </Typography>
@@ -36,4 +36,4 @@ class Promotion extends React.Component {
   }
 }
 
-export default Radium(Promotion);
+export default Radium(Promotion); //Should change to VIP Innocence as all promos go through it or BlueBowTieProject
